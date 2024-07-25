@@ -1,6 +1,5 @@
 package uni.pam.model;
 
-
 import org.hibernate.annotations.CreationTimestamp;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,17 +22,24 @@ public class Usuarios {
 
     private String correo;
     private String contrasena;
-    
+
     @CreationTimestamp
     private LocalDateTime creado_en;
-    
+
+    private String ip;
+    private String locacion;
+    private String dispositivo;
+
     public Usuarios() {
     }
-    
-    public Usuarios(Integer id, String correo, String contraseña, LocalDateTime creado_en) {
+
+    public Usuarios(Integer id, String correo, String contrasena, LocalDateTime creado_en, String ip, String locacion, String dispositivo) {
         this.id = id;
         this.correo = correo;
-        this.contrasena = contraseña;
+        this.contrasena = contrasena;
         this.creado_en = creado_en;
+        this.ip = ip;
+        this.locacion = locacion;
+        this.dispositivo = dispositivo;
     }
 }
